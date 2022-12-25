@@ -26,23 +26,47 @@ int [,] FillArray(int rows, int columns, int begin, int end)
     {   
         array[0, i] = temp;
         temp = temp +1;
-        Console.WriteLine(temp);
     }
     
     for (int j = 1; j < rows; j++)
     {  
         array[j, rows-1] = temp;
         temp = temp + 1;
-        Console.WriteLine(temp);
     }
 
     for (int i = 2 ; i < 0; i--)
     {   
-        array[3, i] = temp;
+        array[rows-1, i] = temp;
         temp = temp + 1;
-        Console.WriteLine(temp);
     }
-
+    int k = columns - 2;
+    for (int j = 0; j < rows-1; j++)
+    {  
+        array[columns -1, k] = temp;
+        k = k -1;
+        temp = temp + 1;
+    }
+    k = rows - 2;
+    for (int j = 0; j < rows-2; j++)
+    {  
+        array[k, 0] = temp;
+        k = k -1;
+        temp = temp + 1;
+    }
+    k = columns - 3;
+    for (int j = 0; j < rows-2; j++)
+    {  
+        array[columns -3, k] = temp;
+        k = k +1;
+        temp = temp + 1;
+    }
+    k = columns - 2;
+    for (int j = 0; j < rows-2; j++)
+    {  
+        array[columns -2, k] = temp;
+        k = k -1;
+        temp = temp + 1;
+    }
     return array;
 }
 
